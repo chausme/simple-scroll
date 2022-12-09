@@ -10,13 +10,15 @@
     </head>
     <body>
         <header id="home">
-            <nav id="nav">
-                <a href="/" class="logo">
-                    <img src="./images/logo.svg" alt="Simple Scroll">
-                </a>
-                <button class="nav-toggle btn btn-dark">
-                    <i class="fas fa-bars"></i>
-                </button>
+            <nav id="nav" class="nav-fixed bg-white p-3">
+                <div class="nav-container d-flex justify-content-between">
+                    <a href="/" class="logo">
+                        <img src="./images/logo.svg" alt="Simple Scroll">
+                    </a>
+                    <button class="nav-toggle btn btn-dark">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
                 <div class="links-container">
                     <ul class="links">
                         <li>
@@ -42,24 +44,26 @@
                 </div>
             </div>
         </header>
-        <section id="about" class="scroll-section">
+        <main>
+            <section id="about" class="scroll-section bg-white">
+                <div class="container text-center">
+                    <h2>About <span>us</span></h2>
+                </div>
+            </section>
+            <section id="services" class="scroll-section bg-light">
+                <div class="container text-center">
+                    <h2>Our <span>services</span></h2>
+                </div>
+            </section>
+            <section id="tours" class="scroll-section bg-white">
+                <div class="container text-center">
+                    <h2>Our <span>tours</span></h2>
+                </div>
+            </section>
+        </main>
+        <footer class="scroll-section text-center py-4 d-flex align-items-center bg-dark">
             <div class="container text-center">
-                <h2>About <span>us</span></h2>
-            </div>
-        </section>
-        <section id="services" class="scroll-section">
-            <div class="container text-center">
-                <h2>Our <span>services</span></h2>
-            </div>
-        </section>
-        <section id="tours" class="scroll-section">
-            <div class="container text-center">
-                <h2>Our <span>tours</span></h2>
-            </div>
-        </section>
-        <footer class="scroll-section text-center py-4">
-            <div class="container text-center">
-                <p>Copyright &copy; Backroads Travel Tours Company <span>2022</span>. All rights reserved</p>
+                <p class="mb-0 text-white">Copyright &copy; Backroads Travel Tours Company <span>2022</span>. All rights reserved</p>
             </div>
         </footer>
         <a href="#home" class="scroll-link top-link">
