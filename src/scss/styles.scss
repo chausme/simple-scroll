@@ -4,6 +4,24 @@
     --transition: all 0.15s linear;
 }
 
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+header {
+    min-height: 100vh;
+    background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.8)),
+        url('../images/background.jpg?as=webp&width=1920&quality=75') center/cover no-repeat;
+}
+
 .logo {
     img {
         max-width: 48px;
@@ -11,9 +29,12 @@
     }
 }
 
-.nav-toggle {
-    @media screen and (min-width: $screen-lg) {
-        display: none;
+.nav-top {
+    z-index: 2;
+    position: relative;
+
+    a {
+        color: var(--bs-white);
     }
 }
 
@@ -22,7 +43,18 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 2;
+    background-color: var(--bs-white);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+    a {
+        color: var(--bs-dark);
+    }
+}
+
+.nav-toggle {
+    @media screen and (min-width: $screen-lg) {
+        display: none;
+    }
 }
 
 .links-container {
@@ -35,13 +67,11 @@
 }
 
 .links {
-
     li {
         list-style-type: none;
         margin-left: 32px;
 
         a {
-            color: var(--bs-dark);
             text-decoration: none;
             font-size: 1.2rem;
             font-weight: 500;
@@ -58,26 +88,12 @@
     min-height: 100vh;
     display: grid;
     place-items: center;
-    background-color: var(--bs-light);
-    background-image: url('../images/background.jpg?as=webp&width=1920&quality=75');
-    background-size: cover;
     position: relative;
-
-    &:after {
-        content: '';
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.5);
-    }
 
     .container {
         z-index: 1;
         position: relative;
     }
-
 }
 
 .btn-tr {
@@ -104,5 +120,26 @@
 footer {
     &.scroll-section {
         height: 200px;
+    }
+}
+
+.top-link {
+    width: 48px;
+    height: 48px;
+    background-color: var(--bs-teal);
+    display: block;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bs-white);
+    text-decoration: none;
+    font-style: 3rem;
+    animation: bounce 2s ease-in-out infinite;
+
+    &:hover {
+        color: var(--bs-white);
     }
 }
