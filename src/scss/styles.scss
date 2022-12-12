@@ -62,14 +62,23 @@ header {
     overflow: hidden;
 
     @media screen and (min-width: $screen-lg) {
-        height: auto;
+        height: auto !important;
     }
 }
 
 .links {
+    padding-top: 24px;
+
+    @media screen and (min-width: $screen-lg) {
+       padding-top: 0;
+    }
+    
     li {
         list-style-type: none;
-        margin-left: 32px;
+        margin-bottom: 8px;
+        @media screen and (min-width: $screen-lg) {
+            margin: 0 0 0 32px;
+        }
 
         a {
             text-decoration: none;
