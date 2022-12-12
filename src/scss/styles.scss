@@ -32,9 +32,17 @@ header {
 .nav-top {
     z-index: 2;
     position: relative;
+    background-color: var(--bs-white);
+
+    @media screen and (min-width: $screen-lg) {
+        background-color: transparent;
+    }
 
     a {
-        color: var(--bs-white);
+        color: var(--bs-dark);
+        @media screen and (min-width: $screen-lg) {
+            color: var(--bs-white);
+        }
     }
 }
 
@@ -60,6 +68,7 @@ header {
 .links-container {
     height: 0;
     overflow: hidden;
+    transition: var(--transition);
 
     @media screen and (min-width: $screen-lg) {
         height: auto !important;
@@ -70,9 +79,9 @@ header {
     padding-top: 24px;
 
     @media screen and (min-width: $screen-lg) {
-       padding-top: 0;
+        padding-top: 0;
     }
-    
+
     li {
         list-style-type: none;
         margin-bottom: 8px;
@@ -138,6 +147,7 @@ footer {
     background-color: var(--bs-teal);
     display: block;
     position: fixed;
+    visibility: hidden;
     bottom: 50px;
     right: 50px;
     display: flex;
@@ -146,9 +156,14 @@ footer {
     color: var(--bs-white);
     text-decoration: none;
     font-style: 3rem;
+    transition: var(--transition);
     animation: bounce 2s ease-in-out infinite;
 
     &:hover {
         color: var(--bs-white);
+    }
+
+    &.show-link {
+        visibility: visible;
     }
 }
